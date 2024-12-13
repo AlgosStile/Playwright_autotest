@@ -1,0 +1,12 @@
+{
+  "name": "fck-autotests",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Todor Oleg",
+  "license": "ISC",
+  "description": "A couple of simple autotests for FCK"
+}
