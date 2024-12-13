@@ -1,5 +1,6 @@
 package autotest.steps;
 
+import autotest.config.PlaywrightConfig;
 import autotest.pages.PageObject;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -13,15 +14,20 @@ import static org.junit.Assert.assertTrue;
  * 13.12.2024
  */
 public class StepDefinitions {
+    private final PageObject pageObject;
+    private final PlaywrightConfig playwrightConfig;
 
     @Autowired
-    private PageObject pageObject;
+    public StepDefinitions(PageObject pageObject, PlaywrightConfig playwrightConfig) {
+        this.pageObject = pageObject;
+        this.playwrightConfig = playwrightConfig;
+    }
 
     @Given("I open the Playwright test page")
     public void iOpenThePlaywrightTestPage() {
         pageObject
                 .getPage()
-                .navigate("https://algosstile.github.io/vue-app/index.html");
+                .navigate(playwrightConfig.getTestPageUrl());
     }
 
     @When("I check the page title")
@@ -42,7 +48,7 @@ public class StepDefinitions {
     public void iOpenThePlaywrightWelcomePage() {
         pageObject
                 .getPage()
-                .navigate("https://algosstile.github.io/vue-app/index.html");
+                .navigate(playwrightConfig.getTestPageUrl());
     }
 
     @When("I check for the H1 header")

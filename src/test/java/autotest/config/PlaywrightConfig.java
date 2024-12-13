@@ -13,6 +13,8 @@ import org.springframework.context.annotation.Scope;
  */
 @Configuration
 public class PlaywrightConfig {
+    private final String testPageUrl = "https://algosstile.github.io/vue-app/index.html";
+
     @Bean
     public Playwright playwright() {
         return Playwright.create();
@@ -28,5 +30,9 @@ public class PlaywrightConfig {
     @Scope("prototype")
     public Page page(Browser browser) {
         return browser.newPage();
+    }
+
+    public String getTestPageUrl() {
+        return testPageUrl;
     }
 }
