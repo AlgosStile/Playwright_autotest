@@ -72,8 +72,8 @@
 │   │       └── pages        # Пакет для объектов страниц
 │   │           └── PageObject.java
 │   │       
-│   │       └── steps        # Пакет для определений шагов
-│   │           └── StepDefinitions.java
+│   │       └── steps        # Пакет c автотестами
+│   │           └── Tests.java
 │   │       
 │   └── test
 │       └── java
