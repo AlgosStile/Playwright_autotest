@@ -96,15 +96,15 @@
 ```gherkin
 Feature: Playwright Tests
 
-  Scenario: Check page title
-    Given I open the Playwright test page
-    When I check the page title
-    Then I click on the cart item
+   Scenario: Check page title
+      Given I open the Playwright title page
+      When I check the page title
+      Then I click on the cart item
 
-  Scenario: Check page H1
-    Given I open the Playwright H1 page
-    When I check for the H1 header
-    Then I close the browser after checking welcome header
+   Scenario: Check View all button
+      Given I open the Playwright all button page
+      When I check the View all button
+      Then I verify the View all button redirects
 ```
 
 ### Определения шагов
