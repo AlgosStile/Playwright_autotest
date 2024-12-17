@@ -1,6 +1,7 @@
 package autotest.steps;
 
 import autotest.config.PlaywrightConfig;
+import autotest.locators.Locators;
 import autotest.pages.PageObject;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -33,21 +34,36 @@ public class NavigationMenuTest {
 
     @When("I check for the pagination number")
     public void iCheckForThePaginationNumber() {
-        pageObject.getPage().evaluate("window.scrollTo(0, document.body.scrollHeight)");
-        pageObject.getPage().waitForSelector("ul.catalog__pagination.pagination");
+        pageObject
+                .getPage()
+                .evaluate("window.scrollTo(0, document.body.scrollHeight)");
+        pageObject
+                .getPage()
+                .waitForSelector(Locators.PAGINATION_SELECTOR);
 
-        var pageTwoLink = pageObject.getPage().locator("ul.catalog__pagination.pagination .pagination__link").nth(1);
+        var pageTwoLink = pageObject
+                .getPage()
+                .locator(Locators.PAGE_LINK_SELECTOR)
+                .nth(1);
         boolean isVisible = pageTwoLink.isVisible();
+
         System.out.println("Элемент видим: " + isVisible);
     }
 
-
     @Then("I verify the pagination is displayed")
     public void iVerifyTheNavigationMenuIsDisplayed() {
-        pageObject.getPage().evaluate("window.scrollTo(0, document.body.scrollHeight)");
-        pageObject.getPage().waitForSelector("ul.catalog__pagination.pagination");
+        pageObject
+                .getPage()
+                .evaluate("window.scrollTo(0, document.body.scrollHeight)");
+        pageObject
+                .getPage()
+                .waitForSelector(Locators.PAGINATION_SELECTOR);
 
-        boolean menuVisible = pageObject.getPage().locator("ul.catalog__pagination.pagination").isVisible();
+        boolean menuVisible = pageObject
+                .getPage()
+                .locator(Locators.PAGINATION_SELECTOR)
+                .isVisible();
+
         assertTrue(menuVisible, "Меню навигации должно быть видимым");
     }
 }

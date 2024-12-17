@@ -1,6 +1,7 @@
 package autotest.steps;
 
 import autotest.config.PlaywrightConfig;
+import autotest.locators.Locators;
 import autotest.pages.PageObject;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -32,15 +33,24 @@ public class CatalogItemsTest {
 
     @When("I check the catalog items")
     public void iCheckTheCatalogItems() {
-        pageObject.getPage().waitForSelector("ul.catalog__list > li.catalog__item");
-        boolean isItemPresent = pageObject.getPage().locator("ul.catalog__list > li.catalog__item").count() > 0;
+        pageObject.getPage().waitForSelector(Locators.CATALOG_ITEMS_LIST);
+        boolean isItemPresent = pageObject
+                .getPage()
+                .locator(Locators.CATALOG_ITEMS_LIST).count() > 0;
+
         assertTrue(isItemPresent, "Должен быть хотя бы 1 товар в каталоге");
     }
 
     @Then("I verify catalog items are displayed")
     public void iVerifyCatalogItemsAreDisplayed() {
-        pageObject.getPage().waitForSelector("ul.catalog__list > li.catalog__item");
-        int itemCount = pageObject.getPage().locator("ul.catalog__list > li.catalog__item").count();
+        pageObject
+                .getPage()
+                .waitForSelector(Locators.CATALOG_ITEMS_LIST);
+        int itemCount = pageObject
+                .getPage()
+                .locator(Locators.CATALOG_ITEMS_LIST)
+                .count();
+
         assertTrue(itemCount > 2, "Должно быть больше 2 товаров в каталоге, найдено: " + itemCount);
     }
 }

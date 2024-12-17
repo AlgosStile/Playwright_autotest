@@ -28,12 +28,15 @@ public class H1Test {
     public void iOpenThePlaywrightWelcomePage() {
         pageObject
                 .getPage()
-                .navigate(playwrightConfig.getTestPageUrl());
+                .navigate(playwrightConfig
+                        .getTestPageUrl());
     }
 
     @When("I check for the H1 header")
     public void iCheckForTheWelcomeHeader() {
-        String headerText = pageObject.getHeaderText();
+        String headerText = pageObject
+                .getHeaderText();
+
         assertTrue(headerText.contains("Каталог"));
     }
 

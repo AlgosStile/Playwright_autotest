@@ -1,6 +1,7 @@
 package autotest.steps;
 
 import autotest.config.PlaywrightConfig;
+import autotest.locators.Locators;
 import autotest.pages.PageObject;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -27,7 +28,8 @@ public class TitleAndCartTest {
     public void iOpenThePlaywrightTestPage() {
         pageObject
                 .getPage()
-                .navigate(playwrightConfig.getTestPageUrl());
+                .navigate(playwrightConfig
+                        .getTestPageUrl());
     }
 
     @When("I check the page title")
@@ -40,8 +42,7 @@ public class TitleAndCartTest {
     public void iClickOnTheCard() {
         pageObject
                 .getPage()
-                .locator("a.header__cart")
+                .locator(Locators.CART_LINK_SELECTOR)
                 .click();
     }
 }
-

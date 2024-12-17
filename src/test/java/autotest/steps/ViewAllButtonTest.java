@@ -1,6 +1,7 @@
 package autotest.steps;
 
 import autotest.config.PlaywrightConfig;
+import autotest.locators.Locators;
 import autotest.pages.PageObject;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -28,17 +29,24 @@ public class ViewAllButtonTest {
     public void iOpenThePlaywrightTestPage() {
         pageObject
                 .getPage()
-                .navigate(playwrightConfig.getTestPageUrl());
+                .navigate(playwrightConfig
+                        .getTestPageUrl());
     }
 
     @When("I check the View all button")
     public void iCheckTheViewAllButton() {
-        pageObject.getPage().locator("button.filter__submit.button.button--primery").click();
+        pageObject
+                .getPage()
+                .locator(Locators.VIEW_ALL_BUTTON_SELECTOR)
+                .click();
     }
 
     @Then("I verify the View all button redirects")
     public void iVerifyTheViewAllButtonRedirects() {
-        String currentUrl = pageObject.getPage().url();
+        String currentUrl = pageObject
+                .getPage()
+                .url();
+
         assertTrue(currentUrl.contains("/vue-app/index.html#/"));
     }
 }

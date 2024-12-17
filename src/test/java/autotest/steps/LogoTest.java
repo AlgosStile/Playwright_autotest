@@ -1,6 +1,7 @@
 package autotest.steps;
 
 import autotest.config.PlaywrightConfig;
+import autotest.locators.Locators;
 import autotest.pages.PageObject;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -33,13 +34,21 @@ public class LogoTest {
 
     @When("I check for the logo")
     public void iCheckForTheLogo() {
-        boolean logoExists = pageObject.getPage().locator("img[alt='Логотип интернет магазина Технозавррр']").count() > 0;
+        boolean logoExists = pageObject
+                .getPage()
+                .locator(Locators.LOGO_SELECTOR)
+                .count() > 0;
+
         assertTrue(logoExists, "Логотип должен присутствовать на странице");
     }
 
     @Then("I verify the logo is displayed")
     public void iVerifyTheLogoIsDisplayed() {
-        boolean logoVisible = pageObject.getPage().locator("img[alt='Логотип интернет магазина Технозавррр']").isVisible();
+        boolean logoVisible = pageObject
+                .getPage()
+                .locator(Locators.LOGO_SELECTOR)
+                .isVisible();
+
         assertTrue(logoVisible, "Логотип должен быть виден");
     }
 }

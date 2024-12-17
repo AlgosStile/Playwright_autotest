@@ -1,6 +1,7 @@
 package autotest.steps;
 
 import autotest.config.PlaywrightConfig;
+import autotest.locators.Locators;
 import autotest.pages.PageObject;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -32,20 +33,33 @@ public class FooterTest {
 
     @When("I check for the footer")
     public void iCheckForTheFooter() {
-        boolean footerExists = pageObject.getPage().locator("footer").count() > 0;
+        boolean footerExists = pageObject
+                .getPage().locator(Locators.FOOTER_SELECTOR)
+                .count() > 0;
+
         assertTrue(footerExists, "Футер должен присутствовать на странице");
 
-        boolean hasContactLink = pageObject.getPage().locator("footer a[href='tel:88006009009']").count() > 0;
+        boolean hasContactLink = pageObject
+                .getPage()
+                .locator(Locators.CONTACT_LINK_SELECTOR)
+                .count() > 0;
         assertTrue(hasContactLink, "Футер должен содержать ссылку на контактную информацию");
 
-        boolean hasPrivacyPolicyLink = pageObject.getPage().locator("footer a[href='#']").count() > 0;
+        boolean hasPrivacyPolicyLink = pageObject
+                .getPage()
+                .locator(Locators.PRIVACY_POLICY_LINK_SELECTOR)
+                .count() > 0;
+
         assertTrue(hasPrivacyPolicyLink, "Футер должен содержать ссылку на политику конфиденциальности");
     }
 
     @Then("I verify the footer is displayed")
     public void iVerifyTheFooterIsDisplayed() {
-        boolean footerVisible = pageObject.getPage().locator("footer").isVisible();
+        boolean footerVisible = pageObject
+                .getPage()
+                .locator(Locators.FOOTER_SELECTOR)
+                .isVisible();
+
         assertTrue(footerVisible, "Футер должен быть виден");
     }
 }
-
