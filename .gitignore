@@ -10,6 +10,8 @@ logs/*
 /build/
 /node_modules/
 .node_modules
+/allure-report/
+/test-results/
 
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
