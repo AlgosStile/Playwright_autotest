@@ -9,11 +9,10 @@ import org.springframework.context.annotation.Scope;
 
 /**
  * @Autor: Oleg Todor
- * 13.12.2024
+ * 15.02.2025
  */
 @Configuration
 public class PlaywrightConfig {
-    private final String testPageUrl = "https://algosstile.github.io/vue-app/index.html";
 
     @Bean
     public Playwright playwright() {
@@ -33,6 +32,6 @@ public class PlaywrightConfig {
     }
 
     public String getTestPageUrl() {
-        return testPageUrl;
+        return "https://algosstile.github.io/vue-app/index.html";
     }
 }

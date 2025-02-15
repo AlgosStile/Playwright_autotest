@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * @Autor: Oleg Todor
- * 14.12.2024
+ * 15.02.2025
  */
 public class LogoTest {
     private final PageObject pageObject;

@@ -12,7 +12,7 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * @Autor: Oleg Todor
- * 14.12.2024
+ * 15.02.2025
  */
 public class H1Test {
     private final PageObject pageObject;

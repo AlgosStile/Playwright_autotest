@@ -7,6 +7,11 @@ import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Bean;
 
+
+/**
+ * @Autor: Oleg Todor
+ * 15.02.2025
+ */
 @CucumberContextConfiguration
 @SpringBootTest(classes = Application.class)
 public class CucumberSpringConfiguration {

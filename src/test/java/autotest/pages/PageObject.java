@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @Autor: Oleg Todor
- * 13.12.2024
+ * 15.02.2025
  */
 @Component
 public class PageObject {
