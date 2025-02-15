@@ -43,7 +43,7 @@
 
 4. **Запускаем контейнер с помощью команды:**
 
- `docker run --rm autotests:latest`
+`docker run --rm autotests`
 
 5. **Запуск тестов**
 

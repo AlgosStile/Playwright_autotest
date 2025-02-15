@@ -1,7 +1,8 @@
-# Этап установки зависимостей
-FROM eclipse-temurin:17.0.5_8-jdk AS base
+# Используем образ Maven с Java 17
+FROM maven:3.9.6-eclipse-temurin-17 AS base
 WORKDIR /app/
-# Установка необходимых библиотек для Playwright
+
+# Устанавливаем Playwright и его зависимости
 RUN apt-get update && apt-get install -y \
     libnss3 \
     libnspr4 \
@@ -23,17 +24,7 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Этап сборки
-FROM maven:3.9.6 AS builder
-WORKDIR /app/
-COPY pom.xml /app/
-COPY src /app/src
-RUN mvn clean package -DskipTests
-
-# Этап выполнения тестов
-FROM maven:3.9.6 AS tester
-WORKDIR /app/
-COPY --from=builder /app/target /app/target
+# Копируем исходный код
 COPY pom.xml /app/
 COPY src /app/src
 
