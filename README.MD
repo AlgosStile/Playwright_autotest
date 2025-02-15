@@ -174,5 +174,4 @@ Dockerfile собирает приложение и выполняет тест�
 `docker run -v ${PWD}:/app -e DISPLAY=:99 autotests java -jar /app/target/fck-autotests-1.0-SNAPSHOT.jar` 
 
 ---
-**UPD** - смотреть комментарии в pom.xml
 
