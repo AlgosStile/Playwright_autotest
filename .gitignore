@@ -8,6 +8,8 @@ target/*
 .allure/*
 logs/*
 /build/
+/node_modules/
+.node_modules
 
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
@@ -20,7 +22,6 @@ logs/*
 .idea/compiler.xml
 .idea/libraries/
 *.iws
-*.iml
 *.ipr
 
 ### Eclipse ###

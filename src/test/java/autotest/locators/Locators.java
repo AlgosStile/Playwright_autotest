@@ -1,5 +1,10 @@
 package autotest.locators;
 
+
+/**
+ * Класс локаторов
+ *
+ */
 public class Locators {
     public static final String LOGO_SELECTOR = "img[alt='Логотип интернет магазина Технозавррр']";
     public static final String FOOTER_SELECTOR = "footer";

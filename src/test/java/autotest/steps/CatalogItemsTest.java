@@ -54,4 +54,3 @@ public class CatalogItemsTest {
         assertTrue(itemCount > 2, "Должно быть больше 2 товаров в каталоге, найдено: " + itemCount);
     }
 }
-
